@@ -13,7 +13,7 @@ EXPOSE 81 1521
 
 WORKDIR /opt/h2
 
-CMD java -cp /opt/h2/h2*.jar org.h2.tools.Server \
+CMD java -cp /opt/h2/h2*.jar org.h2.tools.Server -ifNotExists\
  	-web -webAllowOthers -webPort 81 \
  	-tcp -tcpAllowOthers -tcpPort 1521 \
  	-baseDir ${DATA_DIR} ${H2_OPTIONS}
